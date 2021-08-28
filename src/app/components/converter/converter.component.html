@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <h3>Currency Converter</h3>
+
+  <div class="form">
+    <div class="content">
+      <mat-form-field class="w-100">
+        <mat-label>Amount</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="baseCurrency.amount"
+          name="amount"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>From</mat-label>
+        <mat-select
+          [(ngModel)]="baseCurrency.currency"
+          name="baseCurrency"
+          (ngModelChange)="changeBase($event)"
+        >
+          <mat-option
+            *ngIf="!countries.includes(baseCurrency.currency)"
+            [value]="baseCurrency.currency"
+            >{{ baseCurrency.currency }}</mat-option
+          >
+          <mat-option *ngFor="let item of countries" [value]="item">{{
+            item
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>To</mat-label>
+        <mat-select [(ngModel)]="toCurrency.currency" name="to">
+          <mat-option *ngFor="let item of countries" [value]="item">{{
+            item
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="bottom">
+      <div class="result">Conversion: {{ toCurrency.inspect }}</div>
+      <button mat-stroked-button color="primary" (click)="convert()">
+        Convert
+      </button>
+    </div>
+  </div>
+</div>

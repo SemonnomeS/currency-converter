@@ -1,0 +1,24 @@
+{
+	"save": "Save",
+	"close": "Close",
+  "user_info": "User Info",
+  "name": "Name",
+  "email":"Email",
+  "department":"Department",
+  "user_groups":"User groups",
+  "title":"Title",
+
+  "text_input_field":"Text input field",
+  "text_input_field_height_autosize":"Textarea input field, auto height",
+  "single_select_people_picker":"Single select - people picker",
+  "multi_select_people_picker":"Multi select - people picker",
+  "single_select_dropdown":"Single select dropdown",
+  "multi_select_chips":"Multi select chips",
+  "single_choice_for_list_of_checkboxes":"Single choice for list of checkboxes",
+  "uploading_deleting_files":"Uploading/deleting files",
+  "data_overview":"Data overview",
+  "multi_select_chips_stacked":"Multi select chips - stacked",
+  "saving_modal":"Saving modal",
+  "warning_modal":"Warning modal"
+
+}

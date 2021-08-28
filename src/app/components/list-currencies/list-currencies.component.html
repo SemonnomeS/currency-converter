@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <h3>List currencies</h3>
+
+  <div class="form">
+    <div class="content">
+      <mat-form-field class="w-30">
+        <mat-label>From</mat-label>
+        <mat-select
+          [(ngModel)]="baseCurrency.currency"
+          name="baseCurrency"
+          (ngModelChange)="changeBase($event)"
+        >
+          <mat-option
+            *ngIf="!countries.includes(baseCurrency.currency)"
+            [value]="baseCurrency.currency"
+            >{{ baseCurrency.currency }}</mat-option
+          >
+          <mat-option *ngFor="let item of countries" [value]="item">{{
+            item
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="rates">
+        <div class="rate" *ngFor="let item of rates">
+          <span
+            class="flag-icon flag-icon-{{ item.country | lowercase }}"
+          ></span>
+          {{ item.rate }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
