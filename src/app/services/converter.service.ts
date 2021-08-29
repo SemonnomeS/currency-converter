@@ -47,7 +47,7 @@ export class ConverterService {
   }
 
   //as in example --> fifty_eur - twenty_dollars # => 31.98 EUR
-  subtraction(from: Money, to: Money, rate: number) {
+  subtraction(from: Money, to: Money, rate: number): Money {
     let toConversion = to.amount * rate;
     let calculation = Number((from.amount - toConversion).toFixed(2));
 
@@ -58,7 +58,7 @@ export class ConverterService {
   }
 
   // as in example --> fifty_eur / 2 # => 25 EUR
-  fraction(currency: Money, divider: number) {
+  fraction(currency: Money, divider: number): Money {
     let calculation = Number((currency.amount / divider).toFixed(2));
 
     //fifty_eur.inspect  # => "50.00 EUR"
@@ -72,7 +72,7 @@ export class ConverterService {
   }
 
   //as in example --> twenty_dollars * 3 # => 60 USD
-  multiplication(currency: Money, multiplier: number) {
+  multiplication(currency: Money, multiplier: number): Money {
     let calculation = Number((currency.amount * multiplier).toFixed(2));
 
     //fifty_eur.inspect  # => "50.00 EUR"
